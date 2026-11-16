@@ -1,0 +1,122 @@
+/* Centre the content and add spacing */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style the input field */
+#taskInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #3182ce;
+}
+
+/* Make the Add button blue with rounded corners */
+#addTaskBtn {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Add hover effect to the button */
+#addTaskBtn:hover {
+    background-color: #2b6cb0;
+}
+
+#addTaskBtn:active {
+    transform: scale(0.98);
+}
+
+/* Style the task list (ul, li) to improve readability */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    background: #f8fafc;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #2d3748;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#taskList li:hover {
+    background: #edf2f7;
+}
+
+/* Add a class to mark completed tasks */
+#taskList li.completed span {
+    text-decoration: line-through;
+    color: #a0aec0;
+}
+
+#taskList li span {
+    flex: 1;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+.delete-btn {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #c53030;
+}

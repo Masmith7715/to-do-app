@@ -1,0 +1,275 @@
+:root {
+    --bg-primary: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent-blue: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border-color: #e2e8f0;
+    --success-green: #10b981;
+    
+    --priority-high: #ef4444;
+    --priority-medium: #f59e0b;
+    --priority-low: #3b82f6;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    margin: 0;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 580px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Stats Card Panel */
+.stats-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stat-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--border-color);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-blue);
+    border-radius: 999px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input Card Panel */
+.input-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-blue);
+}
+
+select {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+    background-color: var(--card-bg);
+    outline: none;
+    cursor: pointer;
+}
+
+button#addTaskBtn {
+    background-color: var(--accent-blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+button#addTaskBtn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Filter Tab controls */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 6px;
+}
+
+.filter-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 14px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--border-color);
+    color: var(--text-main);
+}
+
+.action-link {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.action-link:hover {
+    color: var(--priority-high);
+}
+
+/* Task list layout */
+ul#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+li.low-priority { border-left: 4px solid var(--priority-low); }
+li.medium-priority { border-left: 4px solid var(--priority-medium); }
+li.high-priority { border-left: 4px solid var(--priority-high); }
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    accent-color: var(--accent-blue);
+    cursor: pointer;
+}
+
+span.task-text {
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+li.completed {
+    background-color: #f1f5f9;
+    border-left-color: #cbd5e1 !important;
+}
+
+li.completed span.task-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+/* Delete Button */
+button.delete-btn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.15s;
+}
+
+li:hover button.delete-btn {
+    color: var(--priority-high);
+}

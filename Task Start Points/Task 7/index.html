@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Task Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Task Flow</h1>
+            <p class="subtitle">Organize and execute your milestones efficiently.</p>
+        </header>
+
+        <!-- Dynamic Statistics Widget -->
+        <section class="stats-card">
+            <div class="stat-item">
+                <span class="stat-num" id="totalTasksCount">0</span>
+                <span class="stat-label">Total Tasks</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num" id="pendingTasksCount">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num" id="completedTasksCount">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </section>
+
+        <!-- Progress Tracker Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+        </div>
+
+        <!-- Task Input Section -->
+        <div class="input-card">
+            <input type="text" id="taskInput" placeholder="Add a new milestone..." aria-label="Task description">
+            <select id="prioritySelect" aria-label="Task priority">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <button id="clearCompletedBtn" class="action-link">Clear Completed</button>
+        </div>
+
+        <!-- Main Task List -->
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
